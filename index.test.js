@@ -4,6 +4,6 @@ const supertest = require('supertest');
 test('GET /', (done) => {
     supertest(app)
         .get('/')
-        .expect(200, 'Hello, world.')
+        .expect(200, 'Hello, World.')
         .end(done);
 });
