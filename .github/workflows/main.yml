@@ -1,6 +1,9 @@
-name: npm test
+name: Deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   test:
@@ -17,3 +20,12 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.d19b9870-737e-41dd-9fa8-f06168954aa5}}
+          heroku_app_name: "mit-pipeline-1" #Must be unique in Heroku
+          heroku_email: "guilhermetadeusoares@gmail.com"
