@@ -23,6 +23,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: ${{secrets.d19b9870-737e-41dd-9fa8-f06168954aa5}}
+          heroku_api_key: ${{secrets.b528dc90-aa03-4217-a0aa-317ffad5a530}}
           heroku_app_name: "mit-pipeline-1" #Must be unique in Heroku
           heroku_email: "guilhermetadeusoares@gmail.com"
